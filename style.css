@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Gowun+Dodum&family=Nanum+Gothic:wght@400;700;800&display=swap');
+body {
+  margin: 0;
+  padding: 20px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid black;
+  border-bottom: 2px solid black;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+header a {
+  text-decoration: none;
+  color: #8382ce;
+}
+header h1 {
+  font-family: 'Agbalumo';
+  font-size: 24px;
+  margin: 0;
+}
+header span a {
+  font-family: 'Nanum Gothic';
+  font-weight: 800;
+  font-size: 20px;
+  color: #9c9c9c;
+  margin-right: 20px;
+  transition: color 0.7s ease, font-size 0.4s;
+}
+
+header span a:hover{
+  color: #8685d1;
+  font-size: 22px;
+}
+
+
+.container{
+  display: grid;
+  grid-template-columns: 2fr 5fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+  "sidebar one"
+  "sidebar two"
+  "sidebar three"
+  "sidebar four";
+  gap: 10px; 
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.sidebar{
+  grid-area: sidebar;
+  margin: 20px;
+}
+.sidebar h1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #7877c0;
+  border-bottom: 2px solid #8382ce;
+  font-family: 'Nanum Gothic';
+  font-weight: 700;
+}
+
+.sidebar a img {
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+  border-radius: 15px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+  border: 2px solid white;
+}
+
+
+.one, .two, .three, .four {
+  font-family: 'Nanum Gothic';
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.one, .two, .three, .four {
+  grid-area: one, two, three, four;
+  background-color: #9d9090;
+  padding: 20px;
+  border-radius: 15px;
+}
+.one leftside, .two rightside, .three leftside, .four rightside{
+  margin: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  }
+.one rightside, .two leftside, .three rightside, .four leftside{
+  margin: 20px;
+}
+
+.one h3, .two h3, .three h3, .four h3{
+  margin: 20px;
+}
+
+.one a, .two a, .three a, .four a{
+  text-decoration: none;
+  color: #ffffff;
+}
+
+
+.one p, .two p, .three p, .four p{
+  margin:20px;
+}
+
+@media (max-width: 800px) {
+  .container {
+    grid-template-columns: 0.5fr 1fr;
+    grid-template-areas:
+      "sidebar one"
+      "sidebar two"
+      "sidebar three"
+      "sidebar four";
+  }
+
+  header h1 {
+    font-size: 22px;
+  }
+
+  header span a {
+    font-size: 18px;
+  }
+
+  header span a:hover {
+    font-size: 20px;
+  }
+
+  .sidebar{
+    width: 80%;
+  }
+
+  
+  .one, .two, .three, .four {
+    flex-direction: column-reverse;
+  }
+}
+
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+  }
+  
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "sidebar"
+      "one"
+      "two"
+      "three"
+      "four";
+  }
+
+  header h1 {
+    font-size: 20px;
+  }
+
+  header span a {
+    font-size: 16px;
+  }
+
+  header span a:hover {
+    font-size: 18px;
+  }
+  .one, .two, .three, .four {
+    flex-direction: column-reverse;
+  }
+}
